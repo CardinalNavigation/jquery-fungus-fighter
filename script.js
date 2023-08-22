@@ -46,9 +46,13 @@ function starFire() {
 
 function render() {
 
+    if (fighterAP < 0) {
+
+    }
+
     if (fighterAP <= 0) {
         fighterAP = 0
-        $('button').addClass("disabled");
+        $('button').prop("disabled", true);
     }
 
     if (fighterAP == 0) {
