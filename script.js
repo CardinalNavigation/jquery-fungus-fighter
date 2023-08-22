@@ -5,45 +5,71 @@ $(document).ready(onReady);
 // Example:
 // let fungusHP = 100;
 
+
+// Make sure you check the index.html file! 
+// There are lots of buttons and things ready for you to hook into here!
+
+
+// 🧠 Remember
+// - Handle events that ->
+// - Updates state which is ->
+// - Rendered to the DOM
+
 let fungusHP= 100;
 let fighterAP= 100;
 
 function onReady() {
     render()
     $('.attack-btn.arcane-scepter').on('click', arcaneScepter)
-    // $('.attack-btn.entangle').on('click', entangle)
-    // $('.attack-btn.arcane-scepter').on('click', arcaneScepter)
-    // $('.attack-btn.arcane-scepter').on('click', arcaneScepter)
+    $('.attack-btn.entangle').on('click', entangle)
+    $('.attack-btn.dragon-blade').on('click', dragonBlade)
+    $('.attack-btn.star-fire').on('click', starFire)
     
-    
-    // Make sure you check the index.html file! 
-    // There are lots of buttons and things ready for you to hook into here!
-    
-    
-    // 🧠 Remember
-    // - Handle events that ->
-    // - Updates state which is ->
-    // - Rendered to the DOM
+ 
 }
 
 function arcaneScepter(event){
     event.preventDefault();
-    console.log('hello');
-    fighterAP=fighterAP-12;
-    fungusHP= fungusHP-14;
-    console.log(fighterAP)
-    console.log(fungusHP)
+    fighterAP = fighterAP-12;
+    fungusHP = fungusHP-14;
+    // console.log(fighterAP)
+    // console.log(fungusHP)
     render();
 }
 
-// function entangle(){
+function entangle(event){
+    event.preventDefault();
+    fighterAP = fighterAP-23;
+    fungusHP = fungusHP-9;
+    // console.log(fighterAP)
+    // console.log(fungusHP)
+    render();
+}
 
-// }
+function dragonBlade(event){
+    event.preventDefault();
+    fighterAP = fighterAP-38;
+    fungusHP = fungusHP-47;
+    // console.log(fighterAP)
+    // console.log(fungusHP)
+    render();
+}
+
+function starFire(event){
+    event.preventDefault();
+    fighterAP = fighterAP-33;
+    fungusHP = fungusHP-25;
+    // console.log(fighterAP)
+    // console.log(fungusHP)
+    render();
+}
 
 function render(){
-    $('#ap-text').append(fighterAP)
-    $('#hp-text').append(fungusHP)
-    console.log(fighterAP)
+    $('.ap-text').empty()
+    $('.ap-text').append(fighterAP + "AP");
+    $('.hp-text').empty()
+    $('.hp-text').append(fungusHP+ "HP");
+
 }
 
 // **Handle click events:** 
@@ -63,19 +89,19 @@ function render(){
     // Figure out what each button does
     // Data for writing functions below:
 
-        // Arcane Scepter
+        // Arcane Scepter✅
 
         // - **AP Cost:** 12
         // - **HP Damage:** 14  
         // Both of these values change when the button is run
         
-        //  Entangle
+        //  Entangle✅
         
         // - **AP Cost:** 23
         // - **HP Damage:** 9
         // Both of these values change when the button is run
         
-        // Dragon Blade
+        // Dragon Blade✅
         
         // - **AP Cost:** 38
         // - **HP Damage:** 47
