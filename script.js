@@ -46,14 +46,21 @@ function starFire() {
 
 function render() {
 
-    if (fighterAP < 0) {
+    if (fighterAP <= 0) {
         fighterAP = 0
+        $('button').addClass("disabled");
+    }
+
+    if (fighterAP == 0) {
         $('.freaky-fungus.walk').remove()
         $('.enemy').append('<div class="freaky-fungus jump"></div>');
     }
 
     if (fungusHP < 0) {
         fungusHP = 0
+    }
+
+    if (fungusHP == 0) {
         $('.freaky-fungus.walk').remove()
         $('.enemy').append('<div class="freaky-fungus dead"></div>');
     }
